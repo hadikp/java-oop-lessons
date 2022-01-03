@@ -4,10 +4,12 @@ public class Animal {
 
     private final String name;
     private final int yearOfBirth;
+    private int points;
 
-    public Animal(String name, int yearOfBirth) {
+    public Animal(String name, int yearOfBirth, int points) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
+        this.points = points;
     }
 
     public String getName() {
@@ -18,11 +20,12 @@ public class Animal {
         return yearOfBirth;
     }
 
+    public int getPoints() {
+        return points;
+    }
+
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", yearOfBirth=" + yearOfBirth +
-                '}';
+        return name + ": " +  points + " pont";
     }
 }
