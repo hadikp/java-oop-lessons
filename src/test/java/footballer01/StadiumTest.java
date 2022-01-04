@@ -20,11 +20,18 @@ class StadiumTest {
         stadium = new Stadium();
         readFile = new ArrayList<>();
         path = Path.of("src/test/resources/focistak.txt");
+        stadium.makeFootballer(path);
     }
 
     @Test
     void testReadFile() {
-        System.out.println(stadium.readFile(path));
+        List<String> expected = stadium.readFile(path);
+        assertEquals(10, expected.size());
+    }
+
+    @Test
+    void testMakeFootballer() {
+        assertEquals(10, stadium.getFootballers().size());
     }
 
 }
