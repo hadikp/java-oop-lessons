@@ -3,13 +3,11 @@ package animal01;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Competition {
 
-    private List<Animal> animals = new ArrayList<>();
+    private Set<Animal> animals = new HashSet<>();
 
     public List<String> readFile(Path path) {
         try {
@@ -33,7 +31,7 @@ public class Competition {
 
     public String winner() {
         int max = 0;
-        String  winner = animals.get(0).toString();
+        String  winner = animals.toString();
         for (Animal a: animals) {
             if (a.getPoints() > max) {
                 max = a.getPoints();
@@ -43,7 +41,13 @@ public class Competition {
         return winner;
     }
 
-    public List<Animal> getAnimals() {
+    public void printSequence() {
+        for (Animal a: animals) {
+            System.out.println(a);
+        }
+    }
+
+    public Set<Animal> getAnimals() {
         return animals;
     }
 }

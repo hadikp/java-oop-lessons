@@ -28,7 +28,11 @@ class CompetitionTest {
     void testWinner() {
         System.out.println(competition.getAnimals());
         System.out.println(competition.winner());
+    }
 
+    @Test
+    void testGetSequence() {
+        competition.printSequence();
     }
 
 }
