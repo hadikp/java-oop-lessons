@@ -21,6 +21,10 @@ class StadiumTest {
         readFile = new ArrayList<>();
         path = Path.of("src/test/resources/focistak.txt");
         stadium.makeFootballer(path);
+        stadium.training();
+        stadium.makeSalary();
+        stadium.goalShoot();
+        stadium.matchNumbers();
     }
 
     @Test
@@ -32,6 +36,26 @@ class StadiumTest {
     @Test
     void testMakeFootballer() {
         assertEquals(10, stadium.getFootballers().size());
+    }
+
+    @Test
+    void testTraining() {
+        assertNotNull(stadium.getFootballers().get(0).getTrainingHours());
+        assertNotNull(stadium.getFootballers().get(9).getTrainingHours());
+    }
+
+    @Test
+    void testMakeSalary() {
+        assertNotNull(stadium.getFootballers().get(0).getSalary());
+        assertNotNull(stadium.getFootballers().get(9).getSalary());
+
+        System.out.println();
+    }
+
+    @Test
+    void testPrintDatas() {
+
+        stadium.printDatas();
     }
 
 }
