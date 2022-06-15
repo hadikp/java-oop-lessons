@@ -35,4 +35,9 @@ class CompetitionTest {
         competition.printSequence();
     }
 
+    @Test
+    void testgit(){
+        System.out.println();
+    }
+
 }
